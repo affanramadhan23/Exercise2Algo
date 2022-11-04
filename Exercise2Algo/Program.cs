@@ -4,30 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SelectionSort
+using System;
+using System.Text;
+namespace tester
 {
-    class program
+    class Insertion
     {
-        private int[] a = new int[91];
-        private int n;
-        public void read()
+        public void InsertionSort()
         {
-            while (true)
+            Console.Clear();
+            Console.WriteLine("Masukkan Banyak Elemen: ");
+            /* Deklarasi variabel untuk input jumlah elemen array yg akan diurutkan */
+            string Input = Console.ReadLine();
+            int Elements;
+            if (int.TryParse(Input, out Elements))
             {
-                Console.WriteLine("Masukkan Jumlah Element Array :");
-                string s = Console.ReadLine();
-                n = Int32.Parse(s);
-                if (n <= 91)
-                    break;
-                else
-                    Console.WriteLine("\nArray maksimum 91 element.\n");
+                Elements = Convert.ToInt32(Input);
             }
-            Console.WriteLine("");
-            Console.WriteLine("----------------------");
-            Console.WriteLine("Masukkan Element Array");
-            Console.WriteLine("----------------------");
-
-
+            else
+            {
+                Console.WriteLine("Maaf input yang Anda masukkan salah.Silahkan tekan Enter untuk mengulang");
+                Console.ReadLine();
+                InsertionSort();
+            }
         }
     }
 }
