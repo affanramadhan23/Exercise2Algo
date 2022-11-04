@@ -76,5 +76,6 @@ namespace tester
                 Console.WriteLine(Angka[i]);
             }
         }
+
     }
 }
